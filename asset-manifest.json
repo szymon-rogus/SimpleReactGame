@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/SimpleReactGame/static/css/main.6944ccff.chunk.css",
+    "main.js": "/SimpleReactGame/static/js/main.1b8ebbe6.chunk.js",
+    "main.js.map": "/SimpleReactGame/static/js/main.1b8ebbe6.chunk.js.map",
+    "runtime-main.js": "/SimpleReactGame/static/js/runtime-main.d4d1f054.js",
+    "runtime-main.js.map": "/SimpleReactGame/static/js/runtime-main.d4d1f054.js.map",
+    "static/js/2.4b4fa182.chunk.js": "/SimpleReactGame/static/js/2.4b4fa182.chunk.js",
+    "static/js/2.4b4fa182.chunk.js.map": "/SimpleReactGame/static/js/2.4b4fa182.chunk.js.map",
+    "index.html": "/SimpleReactGame/index.html",
+    "precache-manifest.6a66f43acefc67e8b96845c84a59a1ab.js": "/SimpleReactGame/precache-manifest.6a66f43acefc67e8b96845c84a59a1ab.js",
+    "service-worker.js": "/SimpleReactGame/service-worker.js",
+    "static/css/main.6944ccff.chunk.css.map": "/SimpleReactGame/static/css/main.6944ccff.chunk.css.map",
+    "static/js/2.4b4fa182.chunk.js.LICENSE": "/SimpleReactGame/static/js/2.4b4fa182.chunk.js.LICENSE",
+    "static/media/pytajnik.jpg": "/SimpleReactGame/static/media/pytajnik.bff0f435.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d4d1f054.js",
+    "static/js/2.4b4fa182.chunk.js",
+    "static/css/main.6944ccff.chunk.css",
+    "static/js/main.1b8ebbe6.chunk.js"
+  ]
+}
