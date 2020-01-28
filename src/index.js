@@ -14,22 +14,28 @@ class Square extends React.Component {
 
     constructor(props) {
         super(props)
+
         do {
             var random = (Math.floor(Math.random()*50) + 1);
-        } while (images[random].limes === 0)
+        } while (images[random].limes < 1)
+
         images[random].limes = images[random].limes - 1;
+
         this.state = {
             value: images[random].src,
             image: images[0].src,
             unknown: true,
         }
+
+        this.handleOnClick = this.handleOnClick.bind(this);
     }
 
-    handleOnClick(square) {
+    handleOnClick = () => {
         if(active < 2 && this.state.unknown) {
             this.setState({
                 image: this.state.value,
             })
+
             recognize[counter%2] = {square : this, value : this.state.value};
             counter++;
             active++;
@@ -52,6 +58,7 @@ class Square extends React.Component {
                 recognize[1].square.setState({
                     unknown: false,
                 })
+
                 points.setState({
                     points: p,
                 })
@@ -65,33 +72,33 @@ class Square extends React.Component {
                 <img src={this.state.image} alt="flag" style={
                     {width: "100%", height: "100%"}}
                     onClick={
-                        () => this.handleOnClick(this)
+                        this.handleOnClick
                     }/>
             </span>
         );
     }
-    
-}
-
-function getSquare(i) {
-    return <Square value={i} />
 }
 
 class Row extends React.Component {
 
+    getSquare = (i) => {
+        return <Square value={i} />
+    }
+
+    createRow = () => {
+        let table = []
+
+        for(var i = 0; i < 10; i++) {
+            table.push(this.getSquare(i + this.props.value*10))
+        }
+        return table
+    }
+
     render() {
+
         return  (
             <div className="board-row" class="row" >
-                {getSquare(0 + this.props.value*10)}
-                {getSquare(1 + this.props.value*10)}
-                {getSquare(2 + this.props.value*10)}
-                {getSquare(3 + this.props.value*10)}
-                {getSquare(4 + this.props.value*10)}
-                {getSquare(5 + this.props.value*10)}
-                {getSquare(6 + this.props.value*10)}
-                {getSquare(7 + this.props.value*10)}
-                {getSquare(8 + this.props.value*10)}
-                {getSquare(9 + this.props.value*10)}
+                {this.createRow()}
             </div>
         );
     }
@@ -100,39 +107,26 @@ class Row extends React.Component {
 
 class GameSquares extends React.Component {
 
+    getRow = (i) => {
+        return <div className="board-row">
+                    <Row value={i} />
+                </div>
+    }
+
+    createGameSquare = () => {
+        let table = []
+
+        for(var i = 0; i < 10; i++) {
+            table.push(this.getRow(i))
+
+        }
+        return table
+    }
+
     render() {
         return (
             <div>
-                <div className="board-row">
-                    <Row value = {0}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {1}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {2}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {3}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {4}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {5}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {6}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {7}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {8}/>
-                </div>
-                <div className="board-row">
-                    <Row value = {9}/>
-                </div>
+                {this.createGameSquare()}
             </div>
         );
     }

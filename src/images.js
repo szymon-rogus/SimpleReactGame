@@ -50,6 +50,17 @@ import watykan from "./images/watykan.png"
 import węgry from "./images/węgry.png"
 import włochy from "./images/włochy.png"
 
+/*function importAll(file) {
+    let images = [];
+    file.keys().forEach(function(key) {
+        images.push(key, 2)
+    });
+    //file.keys().map((item, index) => {images[item.replace('./', '')] = file(item);});
+    return images;
+}
+
+const images = importAll(require.context('./images', false, /.*\.png$/));*/
+
 
 const images = [
     {id : 0, src: pytajnik, limes: 0},
