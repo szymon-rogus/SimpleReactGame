@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Make sure you have a recent version of Node.js installed.
 
+Game availabe at: https://szymon-rogus.github.io/SimpleReactGame/
+
 ## Available Scripts
 
 In the project directory, you can run:
